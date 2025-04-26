@@ -1,14 +1,21 @@
-const atTheOldToad = {
-  potions: [],
-  getPotions() {
-    return `List of all available potions`;
+const profile = {
+  username: "Jacob",
+  playTime: 300,
+  changeUsername(newName) {
+    this.username = newName;
   },
-  addPotion(potionName) {
-    return `Adding ${potionName}`;
+  updatePlayTime(hours) {
+    this.playTime += hours;
   },
-  addPotion(potionName) {},
+  getInfo() {
+    return `${profile.username} has ${profile.playTime} active hours!`;
+  },
 };
 
-atTheOldToad.getPotions();
-atTheOldToad.addPotion("Invisibility");
-atTheOldToad.addPotion("Power potion");
+console.log(profile.getInfo());
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo());
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo());
